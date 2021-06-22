@@ -32,4 +32,4 @@ while (numero_tentativas > 0):
     numero_tentativas = numero_tentativas - 1
     rodada = rodada + 1
 
-print("Fim do jogo!")
+print("Fim do jogo Renato!")
