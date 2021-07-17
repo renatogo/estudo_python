@@ -58,6 +58,10 @@ class Calculadora:
     def chama_divisao(self):
         return round((self.__valor1 / self.__valor2), 2)
 
+# cria instância de calculadora utilizando os parâmetros informados
+valor1 = int(sys.argv[1])
+valor2 = int(sys.argv[2])
+operador = sys.argv[3]
 
-calculadora = Calculadora(10.2, 3.44, '+')
+calculadora = Calculadora(valor1, valor2, operador)
 print(calculadora.inicia_calculo())
