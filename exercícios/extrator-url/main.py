@@ -1,5 +1,10 @@
-url="https://bytebank.com/cambio?moedaOrigem=real&moedaDEstino=dolar&quantidade=100"
+# url="https://bytebank.com/cambio?moedaOrigem=real&moedaDEstino=dolar&quantidade=100"
+url = " "
 print(url)
+
+# valida a URL
+if url.strip()=="":
+    raise ValueError("A URL está vazia")
 
 url_base=url[0:27]
 print(url_base)
