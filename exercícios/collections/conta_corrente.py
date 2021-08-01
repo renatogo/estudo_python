@@ -1,20 +1,31 @@
-class ContaCorrente:
+class Conta:
     def __init__(self, codigo):
-        self.codigo = codigo
-        self.saldo = 0
+        self._codigo = codigo
+        self._saldo = 0
 
     def deposita(self, valor):
-        self.saldo += valor
+        self._saldo += valor
 
     def __str__(self):
-        return "Conta: código {} saldo {}".format(self.codigo, self.saldo)
+        return "Conta: código {} saldo {}".format(self._codigo, self._saldo)
+
+
+class ContaCorrente(Conta):
+    def debita_taxa(self, taxa):
+        self._saldo -= taxa
+
+
+class ContaPoupanca(Conta):
+    def rendimento_taxa(self, taxa):
+        self._saldo *= 1.01
+        self._saldo -= taxa
 
 
 minha_conta = ContaCorrente(1000)
 minha_conta.deposita(100)
 print(minha_conta)
 
-outra_conta = ContaCorrente(2000)
+outra_conta = ContaPoupanca(2000)
 outra_conta.deposita(200)
 print(outra_conta)
 
